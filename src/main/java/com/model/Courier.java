@@ -1,4 +1,4 @@
-package API.Model;
+package com.model;
 
 public class Courier {
     private String login;

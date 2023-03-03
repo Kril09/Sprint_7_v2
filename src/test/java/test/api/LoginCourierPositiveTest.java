@@ -1,7 +1,7 @@
-package TestAPI;
+package test.api;
 
-import API.Client.CourierCustomer;
-import API.Model.Courier;
+import com.client.CourierCustomer;
+import com.model.Courier;
 import io.qameta.allure.junit4.DisplayName;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.After;

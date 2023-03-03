@@ -1,7 +1,6 @@
-package API.Client;
+package com.client;
 
-import API.Model.Order;
-import io.qameta.allure.Description;
+import com.model.Order;
 import io.qameta.allure.Step;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
@@ -14,8 +13,7 @@ public class OrderCustomer {
         RestAssured.baseURI = "https://qa-scooter.praktikum-services.ru";
     }
 
-    @Step
-    @Description("base handle order create api/v1/orders")
+    @Step("Создание заказа")
     public Response newOrder(Order order) {
         return given()
                 .header("Content-type", "application/json")
@@ -25,8 +23,7 @@ public class OrderCustomer {
                 .post("/api/v1/orders");
     }
 
-    @Step
-    @Description("base handle GET /api/v1/orders")
+    @Step("Заказы")
     public Response getOrder() {
         return given()
                 .get("api/v1/orders");

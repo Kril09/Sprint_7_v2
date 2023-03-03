@@ -1,8 +1,8 @@
-package TestAPI;
+package test.api;
 
-import API.Client.OrderCustomer;
-import API.Model.Order;
-import API.Model.RandomOrder;
+import com.client.OrderCustomer;
+import com.model.Order;
+import com.model.RandomOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;

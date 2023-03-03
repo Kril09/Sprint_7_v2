@@ -1,6 +1,6 @@
-package API.Client;
+package com.client;
 
-import API.Model.Courier;
+import com.model.Courier;
 import io.qameta.allure.Description;
 import io.qameta.allure.Step;
 import io.restassured.RestAssured;
@@ -13,8 +13,7 @@ public class CourierCustomer {
         RestAssured.baseURI = "https://qa-scooter.praktikum-services.ru";
     }
 
-    @Step
-    @Description("base handle courier create /api/v1/courier")
+    @Step("Создание курьера")
     public Response newCourier(Courier courier) {
         return given()
                 .header("Content-type", "application/json")
@@ -24,8 +23,7 @@ public class CourierCustomer {
                 .post("/api/v1/courier");
     }
 
-    @Step
-    @Description("base handle courier login /api/v1/courier/login")
+    @Step("Логин курьера")
     public Response loginCourier(Courier courier) {
         return given()
                 .header("Content-type", "application/json")

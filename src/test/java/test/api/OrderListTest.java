@@ -1,6 +1,6 @@
-package TestAPI;
+package test.api;
 
-import API.Client.OrderCustomer;
+import com.client.OrderCustomer;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
 
@@ -15,7 +15,7 @@ public class OrderListTest {
     @DisplayName("The body of response return list of orders")
     public void getOrderReturnList() {
         orderClient.getOrder()
-                .then()
+                .then().assertThat().statusCode(200)
                 .body("orders", notNullValue());
     }
 
@@ -23,7 +23,7 @@ public class OrderListTest {
     @DisplayName("The body of response return list of orders 2 var")
     public void getOrderReturnList1() {
         orderClient.getOrder()
-                .then()
+                .then().assertThat().statusCode(200)
                 .extract().path("orders")
                 .getClass().equals(ArrayList.class);
     }

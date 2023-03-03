@@ -1,4 +1,4 @@
-package API.Model;
+package com.model;
 
 import org.apache.commons.lang3.RandomStringUtils;
 

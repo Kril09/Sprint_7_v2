@@ -1,8 +1,8 @@
-package TestAPI;
+package test.api;
 
-import API.Client.CourierCustomer;
-import API.Model.Courier;
-import API.Model.RandomCourier;
+import com.client.CourierCustomer;
+import com.model.Courier;
+import com.model.RandomCourier;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
 import org.junit.After;
@@ -18,14 +18,8 @@ public class NewCourierPositiveTest {
     @DisplayName("request returns correct status code")
     public void checkNewCourierStatusCode() {
         ValidatableResponse validatableResponse = courierCustomer.newCourier(courier)
-                .then().assertThat().statusCode(201);
-    }
-
-    @Test
-    @DisplayName("successful request returns ok: true;")
-    public void checkNewCourierSuccessTrue() {
-        courierCustomer.newCourier(courier)
-                .then().assertThat().body("ok", equalTo(true));
+                .then().assertThat().statusCode(201)
+                .body("ok", equalTo(true));
     }
 
     @After
